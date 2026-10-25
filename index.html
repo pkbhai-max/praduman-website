@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Welcome to the official P.K BHAI personal portfolio.">
+
+  <title>P.K BHAI | Official Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #090613;
+      --panel: #140d24;
+      --purple: #a855f7;
+      --pink: #e879f9;
+      --text: #f8f4ff;
+      --muted: #b9accd;
+      --border: rgba(168, 85, 247, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .glow {
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: #8b5cf6;
+      filter: blur(150px);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .glow-one {
+      top: 100px;
+      left: -180px;
+    }
+
+    .glow-two {
+      right: -180px;
+      top: 500px;
+      background: #d946ef;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 17px 8%;
+      background: rgba(9, 6, 19, 0.9);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: var(--pink);
+      text-shadow: 0 0 15px #a855f780;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--pink);
+    }
+
+    .hero {
+      min-height: 570px;
+      max-width: 1150px;
+      margin: auto;
+      padding: 90px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--pink);
+      border: 1px solid var(--border);
+      background: #a855f711;
+      border-radius: 30px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: clamp(43px, 7vw, 78px);
+      line-height: 1.1;
+      margin: 22px 0 12px;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #a855f7, #f0abfc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      color: var(--pink);
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      max-width: 540px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 21px;
+      border: 1px solid var(--purple);
+      border-radius: 9px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(100deg, #9333ea, #c026d3);
+      box-shadow: 0 0 22px #a855f744;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px #c084fc88;
+    }
+
+    .profile-wrap {
+      flex-shrink: 0;
+      padding: 7px;
+      border-radius: 28px;
+      border: 2px solid var(--purple);
+      box-shadow: 0 0 25px #a855f744,
+                  inset 0 0 20px #a855f722;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .profile {
+      display: block;
+      width: 280px;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 21px;
+      background: var(--panel);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 30px;
+      scroll-margin-top: 80px;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .about-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 30px;
+      background: linear-gradient(135deg, #170d2a, #100b1c);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .about-box p {
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--pink);
+      box-shadow: 0 0 22px #a855f722;
+    }
+
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: var(--pink);
+      margin-bottom: 9px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      display: block;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.025);
+      border-color: var(--pink);
+      box-shadow: 0 0 20px #a855f733;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .social-link {
+      display: inline-block;
+      padding: 13px 24px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--panel);
+      transition: 0.3s;
+    }
+
+    .social-link:hover {
+      color: var(--pink);
+      border-color: var(--pink);
+      box-shadow: 0 0 18px #a855f733;
+    }
+
+    footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    footer span {
+      color: var(--pink);
+    }
+
+    @media (max-width: 760px) {
+      header {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: auto;
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 55px 22px;
+        gap: 35px;
+      }
+
+      .description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .profile {
+        width: 230px;
+        height: 270px;
+      }
+
+      section {
+        padding: 45px 20px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery img {
+        height: 190px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .logo {
+        font-size: 19px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      .gallery img {
+        height: 145px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+
+  <header>
+    <a href="#home" class="logo">PRDUMAN</a>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Photos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">WELCOME TO MY WORLD</span>
+
+        <h1>
+          I'M <span class="gradient-text">PRADUMAN</span>
+        </h1>
+
+        <div class="subtitle">
+          Student | Creator | Future Developer
+        </div>
+
+        <p class="description">
+          Welcome to my personal website! I'm passionate about
+          technology, creativity, learning new skills, and turning
+          my ideas into something amazing. This is my own little
+          space on the internet.
+        </p>
+
+        <div class="buttons">
+          <a href="#about" class="btn btn-primary">
+            Explore My World ↗
+          </a>
+
+          <a href="#contact" class="btn">
+            Connect With Me
+          </a>
+        </div>
+      </div>
+
+      <div class="profile-wrap">
+        <img
+          class="profile"
+          src="profile.jpg"
+          alt="PRADUMAN profile photo"
+        >
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-heading">
+        ABOUT <span class="gradient-text">ME</span>
+      </h2>
+
+      <p class="section-subtitle">
+        A little introduction
+      </p>
+
+      <div class="about-box">
+        <p>
+          Hey! I'm PRADUMAN. I enjoy learning about computers,
+          discovering new technology, and expressing my creativity.
+          I'm always looking for new things to learn and ways to
+          improve myself. This portfolio is where I share my
+          interests, photos, and personal journey.
+        </p>
+      </div>
+    </section>
+
+    <section id="interests">
+      <h2 class="section-heading">
+        MY <span class="gradient-text">INTERESTS</span>
+      </h2>
+
+      <p class="section-subtitle">
+        Things I enjoy and want to explore
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">💻</div>
+          <h3>Technology</h3>
+          <p>
+            Exploring computers, coding, websites, and the digital
+            world.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🎨</div>
+          <h3>Creativity</h3>
+          <p>
+            Enjoying photography, design, editing, and creative ideas.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🚀</div>
+          <h3>My Goals</h3>
+          <p>
+            Learning useful skills, building projects, and creating
+            new opportunities.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2 class="section-heading">
+        MY <span class="gradient-text">GALLERY</span>
+      </h2>
+
+      <p class="section-subtitle">
+        A collection of my favourite moments
+      </p>
+
+      <div class="gallery">
+        <img src="photo1.jpg" alt="PRADUMAN gallery photo one">
+        <img src="photo2.jpg" alt="PRADUMAN gallery photo two">
+        <img src="photo3.jpg" alt="PRADUMAN gallery photo three">
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-heading">
+        LET'S <span class="gradient-text">CONNECT</span>
+      </h2>
+
+      <p class="section-subtitle">
+        Find me on social media
+      </p>
+
+      <div class="socials">
+        <!-- Replace these example addresses with your real profiles. -->
+        <a
+          class="social-link"
+          href="https://www.instagram.com/pk.bhai_2208?exln=MWs2a3Jwb3JjN2lmNw=="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📸 Instagram ↗
+        </a>
+
+        <a
+          class="social-link"
+          href="https://youtube.com/@pk.bhai2208?si=cKYeR6R8ZpuSxVpb"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ▶ YouTube ↗
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Made with creativity by <span>PRADUMAN</span>
+    <br>
+    © <span id="year"></span> PRADUMAN. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
